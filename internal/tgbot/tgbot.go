@@ -1,8 +1,10 @@
 package tgbot
 
 import (
-	"net/url"
+	"context"
+	"fmt"
 
+	"github.com/Lawliet18/shady-business-bot/internal/message"
 	"github.com/NicoNex/echotron/v3"
 	"github.com/rs/zerolog"
 )
@@ -10,50 +12,43 @@ import (
 type Bot struct {
 	log zerolog.Logger
 
-	webhookURL string
-	token      string
+	token            string
+	chatID           int64
+	notificationChan <-chan message.Message
 }
 
 type Config struct {
-	WebhookURL string
-	Token      string
+	Token            string
+	ChatID           int64
+	NotificationChan <-chan message.Message
 }
 
 func New(log zerolog.Logger, config Config) *Bot {
 	return &Bot{
-		log:        log,
-		webhookURL: config.WebhookURL,
-		token:      config.Token,
+		log:              log,
+		token:            config.Token,
+		chatID:           config.ChatID,
+		notificationChan: config.NotificationChan,
 	}
 }
 
-func (bot *Bot) Start() error {
+func (bot *Bot) Start(ctx context.Context) error {
 	api := echotron.NewAPI(bot.token)
 
-	updates, err := bot.updatesChannel()
-	if err != nil {
-		return err
-	}
-
-	for u := range updates {
-		if u.Message.Text == "/start" {
-			api.SendMessage("Hello world", u.ChatID(), nil)
+	for {
+		select {
+		case <-ctx.Done():
+			return nil
+		case msg := <-bot.notificationChan:
+			bot.sendMessage(api, msg)
 		}
 	}
-
-	return nil
 }
 
-func (bot *Bot) updatesChannel() (<-chan *echotron.Update, error) {
-	if bot.webhookURL == "" {
-		return echotron.PollingUpdates(bot.token), nil
-	}
-
-	u, err := url.ParseRequestURI(bot.webhookURL)
+func (bot *Bot) sendMessage(api echotron.API, msg message.Message) {
+	text := fmt.Sprintf("Phone: %s\nName: %s", msg.Phone, msg.Name)
+	_, err := api.SendMessage(text, bot.chatID, nil)
 	if err != nil {
-		return nil, err
+		bot.log.Err(err).Msg("send message")
 	}
-	u.Path = bot.token
-
-	return echotron.WebhookUpdates(u.String(), bot.token), nil
 }
