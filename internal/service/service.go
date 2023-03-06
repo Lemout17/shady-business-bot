@@ -2,12 +2,15 @@ package service
 
 import (
 	"context"
+	"embed"
 	"errors"
 	"fmt"
+	"io/fs"
 	"net/http"
 	"strings"
 	"time"
 
+	shadybusinessbot "github.com/Lawliet18/shady-business-bot"
 	"github.com/Lawliet18/shady-business-bot/internal/message"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
@@ -19,13 +22,19 @@ type Service struct {
 	addr    string
 	log     zerolog.Logger
 	msgChan chan<- message.Message
+	webFS   embed.FS
 }
 
-func New(log zerolog.Logger, addr string, msgChan chan<- message.Message) *Service {
+func New(
+	log zerolog.Logger,
+	addr string,
+	msgChan chan<- message.Message,
+) *Service {
 	return &Service{
 		addr:    addr,
 		log:     log,
 		msgChan: msgChan,
+		webFS:   shadybusinessbot.WebFS,
 	}
 }
 
@@ -46,7 +55,16 @@ func (svc *Service) Start(ctx context.Context) error {
 		e.Logger = logger
 	}
 
-	e.Any("/", func(c echo.Context) error {
+	staticFS, err := fs.Sub(svc.webFS, "web/static")
+	if err != nil {
+		return fmt.Errorf("sub: %w", err)
+	}
+
+	e.GET("/", echo.StaticFileHandler("web/index.html", svc.webFS))
+
+	e.Any("/static/*", echo.StaticDirectoryHandler(staticFS, false))
+
+	e.Any("/api", func(c echo.Context) error {
 		var args requestArgs
 		err := c.Bind(&args)
 		if err != nil {
@@ -85,7 +103,7 @@ func (svc *Service) Start(ctx context.Context) error {
 		}
 	}()
 
-	err := e.Start(svc.addr)
+	err = e.Start(svc.addr)
 	if err != nil {
 		switch {
 		case errors.Is(err, http.ErrServerClosed):
