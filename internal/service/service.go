@@ -50,7 +50,14 @@ func (svc *Service) Start(ctx context.Context) error {
 		logger := lecho.From(svc.log)
 		e.Use(middleware.RequestID())
 		e.Use(lecho.Middleware(lecho.Config{
-			Logger: logger,
+			Logger:      logger,
+			HandleError: true,
+			Skipper: func(c echo.Context) bool {
+				if strings.HasPrefix(c.Path(), "/static") {
+					return true
+				}
+				return false
+			},
 		}))
 		e.Logger = logger
 	}
