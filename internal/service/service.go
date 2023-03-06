@@ -5,11 +5,14 @@ import (
 	"errors"
 	"fmt"
 	"net/http"
+	"strings"
 	"time"
 
 	"github.com/Lawliet18/shady-business-bot/internal/message"
 	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 	"github.com/rs/zerolog"
+	"github.com/ziflex/lecho/v3"
 )
 
 type Service struct {
@@ -27,25 +30,47 @@ func New(log zerolog.Logger, addr string, msgChan chan<- message.Message) *Servi
 }
 
 type requestArgs struct {
-	Name  string
-	Phone string
+	Name  string `param:"name" query:"name" form:"name" json:"name" xml:"name"`
+	Phone string `param:"phone" query:"phone" form:"phone" json:"phone" xml:"phone"`
 }
 
 func (svc *Service) Start(ctx context.Context) error {
 	e := echo.New()
+
+	{
+		logger := lecho.From(svc.log)
+		e.Use(middleware.RequestID())
+		e.Use(lecho.Middleware(lecho.Config{
+			Logger: logger,
+		}))
+		e.Logger = logger
+	}
+
 	e.Any("/", func(c echo.Context) error {
 		var args requestArgs
 		err := c.Bind(&args)
 		if err != nil {
-			return fmt.Errorf("bind args: %w", err)
+			return echo.NewHTTPError(http.StatusBadRequest, "cannot bind args", err)
 		}
 
-		svc.msgChan <- message.Message{
+		args.Name = strings.TrimSpace(args.Name)
+		args.Phone = strings.TrimSpace(args.Phone)
+
+		if args.Name == "" || args.Phone == "" {
+			return echo.NewHTTPError(http.StatusBadRequest, "phone or name must not be empty")
+		}
+
+		msg := message.Message{
 			Name:  args.Name,
 			Phone: args.Phone,
 		}
 
-		return c.NoContent(200)
+		select {
+		case svc.msgChan <- msg:
+			return c.NoContent(200)
+		case <-ctx.Done():
+			return echo.NewHTTPError(http.StatusServiceUnavailable, "context cancelled")
+		}
 	})
 
 	go func() {

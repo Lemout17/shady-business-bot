@@ -21,8 +21,9 @@ const (
 
 func main() {
 	_ = godotenv.Load()
-	log := zerolog.New(zerolog.NewConsoleWriter())
 
+	zerolog.TimeFieldFormat = zerolog.TimeFormatUnix
+	log := zerolog.New(os.Stdout).With().Timestamp().Logger()
 	token := os.Getenv("TOKEN")
 
 	msgChan := make(chan message.Message, 1)
@@ -42,6 +43,7 @@ func main() {
 	signal.Notify(sigChan, os.Interrupt, syscall.SIGTERM)
 	go func() {
 		<-sigChan
+		log.Info().Msg("gracefully shutting down")
 		cancel()
 	}()
 
@@ -60,5 +62,5 @@ func main() {
 		return
 	}
 
-	log.Info().Msg("gracefully exitting")
+	log.Info().Msg("shut down was gracefull")
 }
