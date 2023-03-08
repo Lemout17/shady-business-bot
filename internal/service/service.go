@@ -31,8 +31,8 @@ func New(
 	msgChan chan<- message.Message,
 ) *Service {
 	return &Service{
+		log:     log.With().Str("component", "service").Logger(),
 		addr:    addr,
-		log:     log,
 		msgChan: msgChan,
 		webFS:   shadybusinessbot.WebFS,
 	}
@@ -53,7 +53,8 @@ func (svc *Service) Start(ctx context.Context) error {
 			Logger:      logger,
 			HandleError: true,
 			Skipper: func(c echo.Context) bool {
-				return strings.HasPrefix(c.Path(), "/static")
+				return strings.HasPrefix(c.Path(), "/static") ||
+					strings.HasPrefix(c.Path(), "/favicon.ico")
 			},
 		}))
 		e.Logger = logger

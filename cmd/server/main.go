@@ -24,18 +24,15 @@ func main() {
 
 	zerolog.TimeFieldFormat = zerolog.TimeFormatUnix
 	log := zerolog.New(os.Stdout).With().Timestamp().Logger()
-	token := os.Getenv("TOKEN")
 
+	if err := run(log); err != nil {
+		log.Fatal().Err(err).Msg("something went wrong")
+		return
+	}
+}
+
+func run(log zerolog.Logger) error {
 	msgChan := make(chan message.Message, 1)
-
-	bot := tgbot.New(log, tgbot.Config{
-		Token:            token,
-		ChatID:           ShadyBusinessChatID,
-		NotificationChan: msgChan,
-	})
-
-	addr := fmt.Sprintf("0.0.0.0:%s", os.Getenv("PORT"))
-	svc := service.New(log, addr, msgChan)
 
 	ctx, cancel := context.WithCancel(context.Background())
 
@@ -50,17 +47,36 @@ func main() {
 	eg, ctx := errgroup.WithContext(ctx)
 
 	eg.Go(func() error {
-		return bot.Start(ctx)
+		bot := tgbot.New(log, tgbot.Config{
+			Token:            os.Getenv("TOKEN"),
+			ChatID:           ShadyBusinessChatID,
+			NotificationChan: msgChan,
+		})
+
+		err := bot.Start(ctx)
+		if err != nil {
+			return fmt.Errorf("start bot: %w", err)
+		}
+
+		return nil
 	})
 
 	eg.Go(func() error {
-		return svc.Start(ctx)
+		addr := fmt.Sprintf("0.0.0.0:%s", os.Getenv("PORT"))
+		svc := service.New(log, addr, msgChan)
+
+		err := svc.Start(ctx)
+		if err != nil {
+			return fmt.Errorf("start service: %w", err)
+		}
+
+		return nil
 	})
 
 	if err := eg.Wait(); err != nil {
-		log.Fatal().Err(err).Msg("something went wrong")
-		return
+		return fmt.Errorf("errgroup wait: %w", err)
 	}
 
 	log.Info().Msg("shut down was gracefull")
+	return nil
 }

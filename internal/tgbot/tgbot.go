@@ -2,6 +2,7 @@ package tgbot
 
 import (
 	"context"
+	"errors"
 	"fmt"
 
 	"github.com/Lawliet18/shady-business-bot/internal/message"
@@ -25,7 +26,7 @@ type Config struct {
 
 func New(log zerolog.Logger, config Config) *Bot {
 	return &Bot{
-		log:              log,
+		log:              log.With().Str("component", "bot").Logger(),
 		token:            config.Token,
 		chatID:           config.ChatID,
 		notificationChan: config.NotificationChan,
@@ -33,6 +34,16 @@ func New(log zerolog.Logger, config Config) *Bot {
 }
 
 func (bot *Bot) Start(ctx context.Context) error {
+	if bot.token == "" {
+		return errors.New("empty token")
+	}
+	if bot.chatID == 0 {
+		return errors.New("chatID must not be 0")
+	}
+	if bot.notificationChan == nil {
+		return errors.New("notification channel must not be nil")
+	}
+
 	api := echotron.NewAPI(bot.token)
 
 	for {
