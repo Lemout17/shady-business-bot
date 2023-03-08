@@ -53,10 +53,7 @@ func (svc *Service) Start(ctx context.Context) error {
 			Logger:      logger,
 			HandleError: true,
 			Skipper: func(c echo.Context) bool {
-				if strings.HasPrefix(c.Path(), "/static") {
-					return true
-				}
-				return false
+				return strings.HasPrefix(c.Path(), "/static")
 			},
 		}))
 		e.Logger = logger
