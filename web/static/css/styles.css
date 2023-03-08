@@ -34,21 +34,6 @@ table {
     border-spacing: 0;
 }
 
-
-/* fonts */
-@font-face {
-    font-family: 'Intro';
-    src: 
-        url('../Intro.otf') ;
-    font-weight: 400;
-    font-style: normal;
-}
-
-
-
-
-
-
 /* styles */
 body {
 	min-width: 480px;
@@ -81,7 +66,7 @@ b {
 	clear: both;
 }
 h2.title{
-	font-family: 'Intro', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
 	font-size: 30px;
 	line-height: 1.3em;
@@ -163,7 +148,7 @@ section{
 .button-m{
 	border: none;
 	cursor: pointer;
-	font-family: 'Intro', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
 	text-transform: uppercase;
 	height: 80px;
@@ -203,7 +188,7 @@ section{
 	background: #48b300;
 	
 	background: linear-gradient(to right, #e5ff00 0%,#4ea9f7 100%);
-	font-family: 'Intro', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
 	letter-spacing: 1px;
 }
@@ -763,7 +748,7 @@ section{
 }
 .formbox>p b{
 	text-transform: uppercase;
-	font-family: 'Intro', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
 	font-size: 30px;
 	line-height: 1.1em;
