@@ -551,6 +551,16 @@ section{
 	font-size: 0;
 	margin-bottom: 30px;
 }
+
+.center {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 30%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
 .cat_item .price>div{
 	display: inline-block;
 	vertical-align: top;
