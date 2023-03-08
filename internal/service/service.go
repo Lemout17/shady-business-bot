@@ -53,21 +53,22 @@ func (svc *Service) Start(ctx context.Context) error {
 			Logger:      logger,
 			HandleError: true,
 			Skipper: func(c echo.Context) bool {
-				return strings.HasPrefix(c.Path(), "/static") ||
-					strings.HasPrefix(c.Path(), "/favicon.ico")
+				return strings.HasPrefix(c.Request().URL.Path, "/static") ||
+					strings.HasPrefix(c.Request().URL.Path, "/favicon.ico")
 			},
 		}))
 		e.Logger = logger
 	}
 
-	staticFS, err := fs.Sub(svc.webFS, "web/static")
+	staticFS, err := fs.Sub(svc.webFS, "web")
 	if err != nil {
 		return fmt.Errorf("sub: %w", err)
 	}
 
-	e.GET("/", echo.StaticFileHandler("web/index.html", svc.webFS))
-
-	e.Any("/static/*", echo.StaticDirectoryHandler(staticFS, false))
+	e.GET("/", func(c echo.Context) error {
+		return c.Redirect(http.StatusPermanentRedirect, "/index.html")
+	})
+	e.StaticFS("/", staticFS)
 
 	e.Any("/api", func(c echo.Context) error {
 		var args requestArgs
@@ -90,7 +91,7 @@ func (svc *Service) Start(ctx context.Context) error {
 
 		select {
 		case svc.msgChan <- msg:
-			return c.NoContent(200)
+			return c.Redirect(http.StatusTemporaryRedirect, "/congrats.html")
 		case <-ctx.Done():
 			return echo.NewHTTPError(http.StatusServiceUnavailable, "context cancelled")
 		}

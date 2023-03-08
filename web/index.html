@@ -36,7 +36,6 @@
 
 
 <body>
-	<iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
 	<div class="main_wrapper">
 		<header class="offer_section">
 			<h1 class="main_title">електронні ваги <p>+ мірна чаша</p>
@@ -94,11 +93,12 @@
 					<b>Замовте зараз</b>
 					та отримайте <span>знижку</span>
 				</p>
-				<form class="m1-form" action="https://new-shop-measuringcup.fly.dev/api" target="dummyframe">
+				<form class="m1-form" action="/api">
 					<input type="text" name="name" placeholder="Введіть ваше ім'я" required>
 					<input type="tel" class="phone" name="phone" placeholder="Введіть ваш телефон" required>
-					<button class="button-m" type="submit">Замовити зі
-						знижкою</button>
+					<a href="/congrats.html">
+						<button class="button-m" type="submit">Замовити зі знижкою</button>
+					</a>
 				</form>
 				<div class="prod_count">Залишилось <span>19</span> вагів по акції!</div>
 			</div>
@@ -316,13 +316,14 @@
 									<b>Замовте зараз</b>
 									та отримайте <span>знижку 30%</span>
 								</p>
-								<form class="m1-form" action="https://new-shop-measuringcup.fly.dev/api"
-									target="dummyframe">
+								<form class="m1-form" action="/api">
 									<input type="text" name="name" placeholder="Введіть ваше ім'я" required>
 									<input type="tel" class="phone" name="phone" placeholder="Введіть ваш телефон"
 										required>
-									<button class="button-m" type="submit">Замовити зі
-										знижкою</button>
+
+									<a href="/congrats.html">
+										<button class="button-m" type="submit">Замовити зі знижкою</button>
+									</a>
 								</form>
 
 								<div class="prod_count"> Залишилось <span>19</span>вагів по акції!</div>
@@ -422,7 +423,7 @@
 				</div>
 			</div>
 
-			<script src="static/js/jquery.min_1.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+			<script src="static/js/jquery.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 			<script>
 				$(document).ready(function () {
 					var i = 0;
