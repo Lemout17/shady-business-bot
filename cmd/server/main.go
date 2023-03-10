@@ -15,6 +15,8 @@ import (
 	"golang.org/x/sync/errgroup"
 )
 
+// TODO: Change chat id
+// go to Telegram web, select a chat, copy number from url, prepend -100 to the number
 const (
 	ShadyBusinessChatID = -1001820130859
 )
@@ -48,6 +50,9 @@ func run(log zerolog.Logger) error {
 
 	eg.Go(func() error {
 		bot := tgbot.New(log, tgbot.Config{
+			// TODO: set bot token obtained from botfather telegram bot
+			// to set it use the following command
+			// fly secrets set TOKEN=<token value>
 			Token:            os.Getenv("TOKEN"),
 			ChatID:           ShadyBusinessChatID,
 			NotificationChan: msgChan,

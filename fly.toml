@@ -1,3 +1,4 @@
+# TODO: change app name
 app = "new-shop-measuringcup"
 kill_signal = "SIGINT"
 kill_timeout = 5
