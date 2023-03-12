@@ -1,402 +1,548 @@
 <html lang="uk-UA">
+  <head>
+    <script type="text/javascript"></script>
 
-<head>
-	<script type="text/javascript"></script>
+    <title>Електронні кухонні ваги + мірна чаша 4 в 1</title>
 
-	<title>Електронні кухонні ваги + мірна чаша 4 в 1</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=480" />
+    <meta
+      name="facebook-domain-verification"
+      content="fkfjh14dnqwagmc84pkol8f8on4n46"
+    />
+    <link
+      rel="shortcut icon"
+      href="static/images/favicon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="static/css/styles.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto"
+    />
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=480">
-	<meta name="facebook-domain-verification" content="fkfjh14dnqwagmc84pkol8f8on4n46" />
-	<link rel="shortcut icon" href="static/images/favicon.png" type="image/x-icon">
-	<link rel="stylesheet" href="static/css/styles.css" type="text/css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <!-- Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        'script',
+        'https://connect.facebook.net/en_US/fbevents.js'
+      );
+      fbq('init', '753698979405045');
+      fbq('track', 'PageView');
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=753698979405045&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+  </head>
 
-	<!-- Meta Pixel Code -->
-	<script>
-		!function (f, b, e, v, n, t, s) {
-			if (f.fbq) return; n = f.fbq = function () {
-				n.callMethod ?
-					n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-			};
-			if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-			n.queue = []; t = b.createElement(e); t.async = !0;
-			t.src = v; s = b.getElementsByTagName(e)[0];
-			s.parentNode.insertBefore(t, s)
-		}(window, document, 'script',
-			'https://connect.facebook.net/en_US/fbevents.js');
-		fbq('init', '753698979405045');
-		fbq('track', 'PageView');
-	</script>
-	<noscript><img height="1" width="1" style="display:none"
-			src="https://www.facebook.com/tr?id=753698979405045&ev=PageView&noscript=1" /></noscript>
-	<!-- End Meta Pixel Code -->
-</head>
+  <body>
+    <div class="main_wrapper">
+      <header class="offer_section">
+        <h1 class="main_title">
+          електронні ваги
+          <p>+ мірна чаша</p>
+        </h1>
+        <h2 class="main_subtitle">Полегшить ваше готування в 4 рази</h2>
+        <div class="box">
+          <img src="static/images/1.png" alt />
+        </div>
+        <div class="price clearfix">
+          <div class="old">
+            Звичайна ціна:
+            <p>
+              <span> <x-oldprice>990</x-oldprice> </span
+              ><small>
+                <x-currency>грн</x-currency>
+              </small>
+            </p>
+          </div>
+          <div class="new">
+            Ціна сьогодні:
+            <p>
+              <span> <x-newprice>690</x-newprice> </span
+              ><small>
+                <x-currency>грн</x-currency>
+              </small>
+            </p>
+          </div>
+        </div>
+        <ul class="ofr_bull">
+          <li>
+            Вимірює не тільки вагу продуктів , а ще й об’єм рідини та
+            температуру
+          </li>
+          <li>
+            Має додаткові функції: термометр, таймер зворотнього відліку часу,
+            довішування, тара, конвертація
+          </li>
+          <li>Оснащений LCD дисплеєм</li>
+          <li>
+            Підходить для зважування та вимірювання сипких, рідких та твердих
+            продуктів
+          </li>
+        </ul>
+        <div class="timer">
+          <p>Встигни замовити зі знижкою:</p>
+          <div class="timer_container">
+            <div class="timer_block">
+              <div class="count hours"></div>
+              <div class="text">годин</div>
+            </div>
+            <div class="timer_block">
+              <div class="count minutes"></div>
+              <div class="text">хвилин</div>
+            </div>
+            <div class="timer_block">
+              <div class="count seconds"></div>
+              <div class="text">секунд</div>
+            </div>
+          </div>
+        </div>
+        <div class="formbox">
+          <p>
+            <b>Замовте зараз</b>
+            та отримайте <span>знижку</span>
+          </p>
+          <form class="m1-form" action="/api">
+            <input
+              type="text"
+              name="name"
+              title="Тільки букви, без спецсимволів!"
+              pattern="[A-Za-zА-Яа-яЁёІіЇїЄє]{2,20}"
+              placeholder="Введіть ваше ім'я"
+              required
+            />
+            <input
+              type="tel"
+              class="phone"
+              id="phonenumber1"
+              name="phone"
+              placeholder="Введіть ваш телефон"
+              title="Format: (xxx) xxx-xxxx"
+              required
+            />
+            <a href="/congrats.html">
+              <button class="button-m" type="submit">
+                Замовити зі знижкою
+              </button>
+            </a>
+          </form>
+          <div class="prod_count">
+            Залишилось <span>19</span> вагів по акції!
+          </div>
+        </div>
+      </header>
 
+      <section class="description-block">
+        <h2 class="title">
+          <span>Всього 1 розумний прилад = менше часу на кухні !</span>
+        </h2>
+        <section>
+          <p>
+            <video
+              loop
+              controls
+              poster="static/images/image2.png"
+              width="480"
+              src="static/videos/IMG_2399.MP4"
+            ></video>
+          </p>
+          <p></p>
+          <div class="txt">
+            <p>
+              <b>
+                🟢 Кухонні ваги з чашею – незамінний помічник на будь-якій
+                кухні. Без цього ви не зможете приготувати страви,
+                використовуючи правильні пропорції продуктів.
+                <br />
+                🟢 Кухонні ваги з чашею поєднують в собі два прилади: ваги і
+                мірний стакан.
+                <b>
+                  <br />
+                  🟢 Чашу легко витягати з приладу та мити. Її також можна
+                  використовувати в парі з блендером або міксером.<b>
+                    <br />
+                    🟢 Кухонні електронні ваги працюють від 1 батарейки типу
+                    CR2032 із максимальною похибкою до 1 грама.
+                  </b>
+                </b></b
+              >
+            </p>
+            <b
+              ><b>
+                <p></p>
+                <br /> </b
+            ></b>
+          </div>
+          <b
+            ><b>
+              <img src="static/images/11.png" alt />
+              <div class="alert">
+                Завдяки електронному управлінню можна вибирати одиницю виміру в
+                грамах або фунтах, а також вибирати вимір води, олії, борошна,
+                цукру чи молока.
 
+                <p></p>
+                Чаша розрахована на вагу до 1 кг або об'єм до 600 мл, а також
+                укомплектована електронним індикатором для точності показників,
+                що вимірюються.
+                <p></p>
+                Числова інформація відображається на ручці пристрою. Перемикання
+                режимів здійснюється кнопкою на ручці чаші.
+                <p></p>
+              </div> </b
+          ></b>
+        </section>
+        <b
+          ><b>
+            <section class="description_section desc2">
+              <h2 class="title">
+                <span
+                  >Основні характеристики електронних вагів+ мірної чаши 4в 1 :
+                </span>
+              </h2>
+              <p>
+                <b> 📎 Зменшує кількість брудного посуду на кухні</b
+                ><br /><br />
+                📎Дозволяє більш точно готувати страви та зекономити час
+              </p>
+              <p>
+                📎 Корисний для підтримки здорового способу життя та кулінарної
+                творчості
+              </p>
+              <p>
+                📎 Ідеальний для людей , які точно слідкують за своєю дієтою та
+                рахують кількість вживаної їжі
+                <br />
+                <br />
 
-<body>
-	<div class="main_wrapper">
-		<header class="offer_section">
-			<h1 class="main_title">електронні ваги <p>+ мірна чаша</p>
-			</h1>
-			<h2 class="main_subtitle">Полегшить ваше готування в 4 рази </h2>
-			<div class="box">
-				<img src="static/images/1.png" alt>
+                <img class="image" src="static/images/2.png" alt />
+              </p>
+            </section>
 
-			</div>
-			<div class="price clearfix">
-				<div class="old">
-					Звичайна ціна:
-					<p><span>
-							<x-oldprice>990</x-oldprice>
-						</span><small>
-							<x-currency>грн</x-currency>
-						</small></p>
-				</div>
-				<div class="new">
-					Ціна сьогодні:
-					<p><span>
-							<x-newprice>690</x-newprice>
-						</span><small>
-							<x-currency>грн</x-currency>
-						</small></p>
-				</div>
-			</div>
-			<ul class="ofr_bull">
-				<li>Вимірює не тільки вагу продуктів , а ще й об’єм рідини та температуру </li>
-				<li>Має додаткові функції: термометр, таймер зворотнього відліку часу, довішування, тара, конвертація
-				</li>
-				<li>Оснащений LCD дисплеєм</li>
-				<li>Підходить для зважування та вимірювання сипких, рідких та твердих продуктів</li>
+            <section class="about_section">
+              <h2 class="title">
+                Відео огляд
+                <p>електронних вагів+ мірної чаши 4в 1</p>
+              </h2>
+            </section>
 
-			</ul>
-			<div class="timer">
-				<p>Встигни замовити зі знижкою:</p>
-				<div class="timer_container">
-					<div class="timer_block">
-						<div class="count hours"></div>
-						<div class="text">годин</div>
-					</div>
-					<div class="timer_block">
-						<div class="count minutes"></div>
-						<div class="text">хвилин</div>
-					</div>
-					<div class="timer_block">
-						<div class="count seconds"></div>
-						<div class="text">секунд</div>
-					</div>
-				</div>
-			</div>
-			<div class="formbox">
-				<p>
-					<b>Замовте зараз</b>
-					та отримайте <span>знижку</span>
-				</p>
-				<form class="m1-form" action="/api">
-					<input type="text" name="name" placeholder="Введіть ваше ім'я" required>
-					<input type="tel" class="phone" name="phone" placeholder="Введіть ваш телефон" required>
-					<a href="/congrats.html">
-						<button class="button-m" type="submit">Замовити зі знижкою</button>
-					</a>
-				</form>
-				<div class="prod_count">Залишилось <span>19</span> вагів по акції!</div>
-			</div>
-		</header>
+            <video
+              loop
+              controls
+              poster="static/images/image1.png"
+              width="480"
+              src="static/videos/IMG_2395.m4v"
+            ></video>
 
+            <section class="sect7">
+              <h2 class="title">Технічні характеристики</h2>
+              <ul class="char_lsit">
+                <li><b>Дисплей: так </b></li>
+                <li><b>Одиниці виміру: унції, кілограми, грами </b></li>
+                <li><b>Максимальна вага: 1 кг</b></li>
+                <li><b>Знімна тара: так </b></li>
+                <li><b>Матеріал: міцний харчовий пластик</b></li>
+              </ul>
+            </section>
 
-		<section class="description-block">
-			<h2 class="title"><span>Всього 1 розумний прилад = менше часу на кухні !</span> </h2>
-			<section>
-				<p> <video loop autoplay controls poster="static/images/image2.png" width="480"
-						src="static/videos/IMG_2399.MP4"></video> </p>
-				<p>
-				</p>
-				<div class="txt">
-					<p>
-						<b> 🟢 Кухонні ваги з чашею – незамінний помічник на будь-якій кухні. Без цього ви не зможете
-							приготувати страви, використовуючи правильні пропорції продуктів.
-							<br>
-							🟢 Кухонні ваги з чашею поєднують в собі два прилади: ваги і мірний стакан. <b>
-								<br>
-								🟢 Чашу легко витягати з приладу та мити. Її також можна використовувати в парі з
-								блендером або міксером.<b>
-									<br>
-									🟢 Кухонні електронні ваги працюють від 1 батарейки типу CR2032 із максимальною
-									похибкою до 1 грама.
-								</b>
-							</b></b>
-					</p><b><b>
-							<p>
+            <!--/description-block-->
+            <section class="sect8 color_theme">
+              <h2 class="title">Відгуки покупців</h2>
+              <p class="subtitle">
+                Задоволені відгуки наших дівчат та жінок,які уже користуються
+                електронними вагами з мірною чашою 4 в 1 <b> </b>
+              </p>
+              <b>
+                <div class="reviews">
+                  <div class="rev_item">
+                    <div class="info clearfix">
+                      <img src="static/images/ava2.jpg" alt />
+                      <p><b>Лариса</b>Київ</p>
+                    </div>
+                    <p>
+                      Супер практичний прилад, який дуже швидко доставили.
+                      Рекомендую 👍
+                    </p>
+                  </div>
+                  <div class="rev_item">
+                    <div class="info clearfix">
+                      <img src="static/images/ava3.jpg" alt />
+                      <p><b>Валерія</b> Полтава</p>
+                    </div>
+                    <p>
+                      Я в захваті. Дуже зручно ним користуватись. Матеріал
+                      дійсно якісний. Купила і мамі , і свекрусі, всім такі
+                      електронні ваги знадобились.
+                    </p>
+                  </div>
+                  <div class="rev_item">
+                    <div class="info clearfix">
+                      <img src="static/images/ava1.jpg" alt />
+                      <p><b>Оксана</b> Харьків</p>
+                    </div>
+                    <p>
+                      Це саме те, що я хотіла для приготування своїх улюблених
+                      страв за точним рецептом . Більше ніяких «на око» .
+                    </p>
+                  </div>
+                </div>
+              </b>
+            </section>
+            <b>
+              <section class="sect9">
+                <h2 class="title">Доставка та <span>оплата</span></h2>
+                <ul class="order_lsit">
+                  <li>
+                    <p>
+                      <span>Доставка</span> Посилка доставляється Новою Поштою
+                      протягом 1-3 днів.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>Оплата</span> Оплата замовлень здійснюється лише за
+                      фактом отримання товару.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span>Гарантії</span> Ми завжди перевіряємо товар перед
+                      відправкою та гарантуємо 100% якість.
+                    </p>
+                  </li>
+                </ul>
+              </section>
+              <section class="offer_section">
+                <h1 class="main_title">
+                  Електронні кухонні ваги
+                  <p>+ мірна чаша 4 в 1</p>
+                </h1>
+                <h2 class="main_subtitle">Полегшить ваше готування в 4 рази</h2>
 
-							</p>
-							<br>
+                <div class="box">
+                  <img src="static/images/1.png" alt />
+                </div>
+                <div class="price clearfix">
+                  <div class="old">
+                    Звичайна ціна:
+                    <p>
+                      <span> <x-oldprice>990</x-oldprice> </span
+                      ><small>
+                        <x-currency>грн</x-currency>
+                      </small>
+                    </p>
+                  </div>
+                  <div class="new">
+                    Ціна сьогодні:
+                    <p>
+                      <span> <x-newprice>690</x-newprice> </span
+                      ><small>
+                        <x-currency>грн</x-currency>
+                      </small>
+                    </p>
+                  </div>
+                </div>
+                <ul class="ofr_bull">
+                  <li>
+                    вимірює не тільки вагу продуктів , а ще й об’єм рідини та
+                    температуру
+                  </li>
+                  <li>
+                    має додаткові функції: термометр, таймер зворотнього відліку
+                    часу, довішування, тара, конвертація
+                  </li>
+                  <li>Оснащений LCD дисплеєм</li>
+                  <li>
+                    підходить для зважування та вимірювання сипких, рідких та
+                    твердих продуктів
+                  </li>
+                  <br />
+                  <br />
+                  <img src="static/images/0303.png" alt />
+                </ul>
+                <div class="timer">
+                  <p>Встигни замовити зі знижкою:</p>
+                  <div class="timer_container">
+                    <div class="timer_block">
+                      <div class="count hours"></div>
+                      <div class="text">годин</div>
+                    </div>
+                    <div class="timer_block">
+                      <div class="count minutes"></div>
+                      <div class="text">хвилин</div>
+                    </div>
+                    <div class="timer_block">
+                      <div class="count seconds"></div>
+                      <div class="text">секунд</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="formbox">
+                  <p>
+                    <b>Замовте зараз</b>
+                    та отримайте <span>знижку 30%</span>
+                  </p>
+                  <form class="m1-form" action="/api">
+                    <input
+                      type="text"
+                      name="name"
+                      title="Тільки букви, без спецсимволів!"
+                      pattern="[A-Za-zА-Яа-яЁёІіЇїЄє]{2,20}"
+                      placeholder="Введіть ваше ім'я"
+                      required
+                    />
+                    <input
+                      type="tel"
+                      class="phone"
+                      id="phonenumber2"
+                      name="phone"
+                      placeholder="Введіть ваш телефон"
+                      title="Format: (xxx) xxx-xxxx"
+                      required
+                    />
+                    <a href="/congrats.html">
+                      <button class="button-m" type="submit">
+                        Замовити зі знижкою
+                      </button>
+                    </a>
+                  </form>
 
-						</b></b>
-				</div><b><b>
-						<img src="static/images/11.png" alt>
-						<div class="alert">
-							Завдяки електронному управлінню можна вибирати одиницю виміру в грамах або фунтах, а також
-							вибирати вимір води, олії, борошна, цукру чи молока.
+                  <div class="prod_count">
+                    Залишилось <span>19</span>вагів по акції!
+                  </div>
+                </div>
+              </section>
+              <div
+                style="
+                  text-align: center;
+                  margin: 10px auto;
+                  display: block;
+                  font-size: 14px;
+                  line-height: 26px;
+                "
+              >
+                <footer class="copyright">
+                  <div class="wrap">
+                    <a
+                      href="https://sites.google.com/view/privacypolicyguarantee/главная-страница"
+                      target="_blank"
+                      >Політика конфіденційності</a
+                    ><br />
+                    <p>Маєте питання або пропозицію ?</p>
 
-							<p></p>
-							Чаша розрахована на вагу до 1 кг або об'єм до 600 мл, а також укомплектована електронним
-							індикатором для точності показників, що вимірюються.
-							<p></p>
-							Числова інформація відображається на ручці пристрою. Перемикання режимів здійснюється
-							кнопкою на ручці чаші.
-							<p></p>
-						</div>
-					</b></b>
-			</section><b><b>
+                    <p>2023. Усі права захищені</p>
+                  </div>
+                </footer>
+              </div>
+            </b>
+          </b></b
+        >
+      </section>
+    </div>
+    <b
+      ><b>
+        <style>
+          .form-control {
+            border: none;
+            width: 100%;
+            display: block;
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            margin-bottom: 15px;
+            height: 80px;
+            border-radius: 30px;
+            background: #fff;
+            text-align: center;
+            color: #222;
+          }
+        </style>
 
+        <script src="static/js/jquery.min.js"></script>
+        <script src="static/js/main.js"></script>
+        <script src="static/js/timeme.min.js"></script>
 
-					<section class="description_section desc2">
-						<h2 class="title"><span>Основні характеристики електронних вагів+ мірної чаши 4в 1 :
-							</span></h2>
-						<p><b> 📎 Зменшує кількість брудного посуду на кухні</b><br><br>
-							📎Дозволяє більш точно готувати страви та зекономити час </p>
-						<p>📎 Корисний для підтримки здорового способу життя та кулінарної творчості
-						</p>
-						<p>📎 Ідеальний для людей , які точно слідкують за своєю дієтою та рахують кількість вживаної
-							їжі
-							<br>
-							<br>
+        <!-- Посетителей на сайте -->
+        <div class="yvedw">
+          <div class="yved yvedf1" style="display: none">
+            <img
+              src="static/images/buy.png"
+              tppabs="buy.png"
+              alt
+              class="yvedi"
+            />
+            <div class="yvedvt">
+              <div class="yvedt">
+                Івлеева Наталія, м.Київ, оформила замовлення, залишилося 16 шт.
+              </div>
+            </div>
+          </div>
+          <div class="yved yvedf2" style="display: none">
+            <img
+              src="static/images/buy.png"
+              tppabs="buy.png"
+              alt
+              class="yvedi"
+            />
+            <div class="yvedvt">
+              <div class="yvedt">
+                Анастасія Романченко, м.Одеса, оформив замовлення, залишилося 14
+                шт.
+              </div>
+            </div>
+          </div>
+          <div class="yved yvedf2" style="display: none">
+            <img
+              src="static/images/buy.png"
+              tppabs="buy.png"
+              alt
+              class="yvedi"
+            />
+            <div class="yvedvt">
+              <div class="yvedt">
+                Дарина Мартинюк, м.Кривий Ріг, оформила замовлення, залишилося
+                12 шт.
+              </div>
+            </div>
+          </div>
+          <div class="yved yvedf1" style="display: none">
+            <img
+              src="static/images/buy.png"
+              tppabs="buy.png"
+              alt
+              class="yvedi"
+            />
+            <div class="yvedvt">
+              <div class="yvedt">
+                Сокур Аня, м.Дніпро, залишила заявку на зворотний дзвінок
+              </div>
+            </div>
 
-
-							<img class="image" src="static/images/2.png" alt>
-
-						</p>
-					</section>
-
-
-					<section class="about_section">
-						<h2 class="title">Відео огляд <p>електронних вагів+ мірної чаши 4в 1</p>
-						</h2>
-					</section>
-
-					<video loop autoplay controls poster="static/images/image1.png" width="480"
-						src="static/videos/IMG_2395.m4v">
-					</video>
-
-
-					<section class="sect7">
-						<h2 class="title">Технічні характеристики</h2>
-						<ul class="char_lsit">
-							<li><b>Дисплей: так </b> </li>
-							<li><b>Одиниці виміру: унції, кілограми, грами </b> </li>
-							<li><b>Максимальна вага: 1 кг</b> </li>
-							<li><b>Знімна тара: так </b> </li>
-							<li><b>Матеріал: міцний харчовий пластик</b> </li>
-
-						</ul>
-					</section>
-
-
-
-					<!--/description-block-->
-					<section class="sect8 color_theme">
-						<h2 class="title">Відгуки покупців</h2>
-						<p class="subtitle">Задоволені відгуки наших дівчат та жінок,які уже користуються електронними
-							вагами з мірною чашою 4 в 1 <b> </b></p><b>
-							<div class="reviews">
-								<div class="rev_item">
-									<div class="info clearfix">
-										<img src="static/images/ava2.jpg" alt>
-										<p><b>Лариса</b>Київ</p>
-									</div>
-									<p>
-
-
-										Супер практичний прилад, який дуже швидко доставили. Рекомендую 👍
-
-									</p>
-								</div>
-								<div class="rev_item">
-									<div class="info clearfix">
-										<img src="static/images/ava3.jpg" alt>
-										<p><b>Валерія</b> Полтава</p>
-									</div>
-									<p>
-
-										Я в захваті. Дуже зручно ним користуватись. Матеріал дійсно якісний. Купила і
-										мамі , і свекрусі, всім такі електронні ваги знадобились.
-									</p>
-								</div>
-								<div class="rev_item">
-									<div class="info clearfix">
-										<img src="static/images/ava1.jpg" alt>
-										<p><b>Оксана</b> Харьків</p>
-									</div>
-									<p>
-
-										Це саме те, що я хотіла для приготування своїх улюблених страв за точним
-										рецептом . Більше ніяких «на око» .
-
-									</p>
-								</div>
-							</div>
-
-						</b>
-					</section>
-					<b>
-
-						<section class="sect9">
-							<h2 class="title">Доставка та <span>оплата</span></h2>
-							<ul class="order_lsit">
-								<li>
-									<p><span>Доставка</span> Посилка доставляється Новою Поштою протягом 1-3 днів.</p>
-								</li>
-								<li>
-									<p><span>Оплата</span> Оплата замовлень здійснюється лише за фактом отримання
-										товару.</p>
-								</li>
-								<li>
-									<p><span>Гарантії</span> Ми завжди перевіряємо товар перед відправкою та гарантуємо
-										100% якість.</p>
-								</li>
-							</ul>
-						</section>
-						<section class="offer_section">
-							<h1 class="main_title">Електронні кухонні ваги <p>+ мірна чаша 4 в 1</p>
-							</h1>
-							<h2 class="main_subtitle">Полегшить ваше готування в 4 рази </h2>
-
-							<div class="box">
-								<img src="static/images/1.png" alt>
-
-							</div>
-							<div class="price clearfix">
-								<div class="old">
-									Звичайна ціна:
-									<p><span>
-											<x-oldprice>990</x-oldprice>
-										</span><small>
-											<x-currency>грн</x-currency>
-										</small></p>
-								</div>
-								<div class="new">
-									Ціна сьогодні:
-									<p><span>
-											<x-newprice>690</x-newprice>
-										</span><small>
-											<x-currency>грн</x-currency>
-										</small></p>
-								</div>
-							</div>
-							<ul class="ofr_bull">
-								<li>вимірює не тільки вагу продуктів , а ще й об’єм рідини та температуру </li>
-								<li>має додаткові функції: термометр, таймер зворотнього відліку часу, довішування,
-									тара, конвертація</li>
-								<li>Оснащений LCD дисплеєм</li>
-								<li>підходить для зважування та вимірювання сипких, рідких та твердих продуктів</li>
-								<br>
-								<br>
-								<img src="static/images/0303.png" alt>
-							</ul>
-							<div class="timer">
-								<p>Встигни замовити зі знижкою:</p>
-								<div class="timer_container">
-									<div class="timer_block">
-										<div class="count hours"></div>
-										<div class="text">годин</div>
-									</div>
-									<div class="timer_block">
-										<div class="count minutes"></div>
-										<div class="text">хвилин</div>
-									</div>
-									<div class="timer_block">
-										<div class="count seconds"></div>
-										<div class="text">секунд</div>
-									</div>
-								</div>
-							</div>
-							<div class="formbox">
-								<p>
-									<b>Замовте зараз</b>
-									та отримайте <span>знижку 30%</span>
-								</p>
-								<form class="m1-form" action="/api">
-									<input type="text" name="name" placeholder="Введіть ваше ім'я" required>
-									<input type="tel" class="phone" name="phone" placeholder="Введіть ваш телефон"
-										required>
-
-									<a href="/congrats.html">
-										<button class="button-m" type="submit">Замовити зі знижкою</button>
-									</a>
-								</form>
-
-								<div class="prod_count"> Залишилось <span>19</span>вагів по акції!</div>
-
-							</div>
-						</section>
-						<div
-							style="text-align: center;margin: 10px auto;display: block;font-size: 14px;line-height: 26px;">
-							<footer class="copyright">
-								<div class="wrap">
-									<a href="https://sites.google.com/view/privacypolicyguarantee/главная-страница"
-										target="_blank">Політика конфіденційності</a><br>
-									<p>Маєте питання або пропозицію ?</p>
-
-
-									<p>2023. Усі права захищені</p>
-								</div>
-							</footer>
-						</div>
-					</b>
-				</b></b>
-		</section>
-	</div><b><b>
-			<style>
-				.form-control {
-					border: none;
-					width: 100%;
-					display: block;
-					font-family: 'Roboto', sans-serif;
-					font-size: 18px;
-					margin-bottom: 15px;
-					height: 80px;
-					border-radius: 30px;
-					background: #fff;
-					text-align: center;
-					color: #222;
-				}
-			</style>
-
-			<script src="static/js/jquery.min.js"></script>
-			<script src="static/js/main.js"></script>
-			<script src="static/js/timeme.min.js"></script>
-
-
-
-
-			<!-- Посетителей на сайте -->
-			<div class="yvedw">
-				<div class="yved yvedf1" style="display: none;">
-					<img src="static/images/buy.png" tppabs="buy.png" alt class="yvedi">
-					<div class="yvedvt">
-						<div class="yvedt">Івлеева Наталія, м.Київ, оформила замовлення, залишилося 16 шт.</div>
-					</div>
-				</div>
-				<div class="yved yvedf2" style="display: none;">
-					<img src="static/images/buy.png" tppabs="buy.png" alt class="yvedi">
-					<div class="yvedvt">
-						<div class="yvedt">Анастасія Романченко, м.Одеса, оформив замовлення, залишилося 14 шт.</div>
-					</div>
-				</div>
-				<div class="yved yvedf2" style="display: none;">
-					<img src="static/images/buy.png" tppabs="buy.png" alt class="yvedi">
-					<div class="yvedvt">
-						<div class="yvedt">Дарина Мартинюк, м.Кривий Ріг, оформила замовлення, залишилося 12 шт.</div>
-					</div>
-				</div>
-				<div class="yved yvedf1" style="display: none;">
-					<img src="static/images/buy.png" tppabs="buy.png" alt class="yvedi">
-					<div class="yvedvt">
-						<div class="yvedt">Сокур Аня, м.Дніпро, залишила заявку на зворотний дзвінок</div>
-					</div>
-
-					<!-- 		<div class="yvedt">Івлеева Наталія, м.Київ, оформила замовлення, залишилося 4 шт.</div>
+            <!-- 		<div class="yvedt">Івлеева Наталія, м.Київ, оформила замовлення, залишилося 4 шт.</div>
 			</div>
 		</div>
 		<div class="yved yvedf2" style="display: none;">
@@ -412,210 +558,232 @@
 			</div>
 		</div>
 		<div class="yved yvedf1" style="display: none;">-->
+          </div>
+          <div class="yved yvedf1" style="display: none">
+            <img
+              src="static/images/trevoga.png"
+              tppabs="trevoga.png"
+              alt
+              class="yvedi"
+            />
+            <div class="yvedvt">
+              <div class="yvedt">
+                Увага всім відвідувачам інтернет-магазину! Залишилося 1
+                комплекти зі знижкою!
+              </div>
+            </div>
+          </div>
+        </div>
 
-				</div>
-				<div class="yved yvedf1" style="display: none;">
-					<img src="static/images/trevoga.png" tppabs="trevoga.png" alt class="yvedi">
-					<div class="yvedvt">
-						<div class="yvedt">Увага всім відвідувачам інтернет-магазину! Залишилося 1 комплекти зі знижкою!
-						</div>
-					</div>
-				</div>
-			</div>
+        <script
+          src="static/js/jquery.min.js"
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"
+        ></script>
+        <script>
+          $(document).ready(function () {
+            var i = 0;
 
-			<script src="static/js/jquery.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-			<script>
-				$(document).ready(function () {
-					var i = 0;
+            function yved() {
+              i = 1;
+              $('.yved:nth-child(' + i + ')')
+                .fadeIn(500)
+                .delay(7000)
+                .fadeOut(500);
+            }
+            setTimeout(function () {
+              setInterval(function () {
+                i = i + 1;
+                if (i > 10) i = 1;
+                $('.yved:nth-child(' + i + ')')
+                  .fadeIn(500)
+                  .delay(7000)
+                  .fadeOut(500);
+              }, 30000);
+              yved();
+            }, 10000);
+          });
+        </script>
+        <script src="./static/js/jquery-input-mask-phone-number.min.js"></script>
+        <script>
+          $(function () {
+            $('#phonenumber1').usPhoneFormat({
+              format: '(xxx) xxx-xxxx',
+            });
+          });
 
-					function yved() {
-						i = 1;
-						$('.yved:nth-child(' + i + ')').fadeIn(500).delay(7000).fadeOut(500);
-					}
-					setTimeout(function () {
-						setInterval(
-							function () {
-								i = i + 1;
-								if (i > 10) i = 1;
-								$('.yved:nth-child(' + i + ')').fadeIn(500).delay(7000).fadeOut(500);
-							}, 30000);
-						yved();
-					}, 10000);
-				});
-			</script>
-			<!-- /scripts -->
+          $(function () {
+            $('#phonenumber2').usPhoneFormat({
+              format: '(xxx) xxx-xxxx',
+            });
+          });
+        </script>
+        <!-- /scripts -->
 
-			<!-- /scripts -->
-			<style>
-				.msg {
-					background: #fff;
-					font-family: "Arial", Arial, Helvetica;
-					position: fixed;
-					right: 30px;
-					bottom: 20px;
-					width: 300px;
-					box-shadow: 0 0 0 0 grey;
-					border-radius: 10px;
-					border: 1px solid #a9a9a9;
-					padding: 5px;
-					color: #666;
-					z-index: 9999
-				}
+        <!-- /scripts -->
+        <style>
+          .msg {
+            background: #fff;
+            font-family: 'Arial', Arial, Helvetica;
+            position: fixed;
+            right: 30px;
+            bottom: 20px;
+            width: 300px;
+            box-shadow: 0 0 0 0 grey;
+            border-radius: 10px;
+            border: 1px solid #a9a9a9;
+            padding: 5px;
+            color: #666;
+            z-index: 9999;
+          }
 
-				.comment {
-					border-radius: 10px;
-					border: 1px solid #a9a9a9;
-					width: 288px;
-					height: 195px;
-					overflow-y: scroll;
-					box-shadow: 0 0 0 grey inset;
-					margin: 5px 0 5px 0;
-					padding: 5px;
-					background: #fff
-				}
+          .comment {
+            border-radius: 10px;
+            border: 1px solid #a9a9a9;
+            width: 288px;
+            height: 195px;
+            overflow-y: scroll;
+            box-shadow: 0 0 0 grey inset;
+            margin: 5px 0 5px 0;
+            padding: 5px;
+            background: #fff;
+          }
 
-				.send {
-					background: #efefef;
-					font-family: "Arial", Arial, Helvetica;
-					width: 250px;
-					border-radius: 10px;
-					border: 1px solid grey;
-					box-shadow: 0 0 0 0 grey;
-					padding: 5px;
-					color: #666;
-					margin: 5px
-				}
+          .send {
+            background: #efefef;
+            font-family: 'Arial', Arial, Helvetica;
+            width: 250px;
+            border-radius: 10px;
+            border: 1px solid grey;
+            box-shadow: 0 0 0 0 grey;
+            padding: 5px;
+            color: #666;
+            margin: 5px;
+          }
 
-				#newmsg {
-					width: 98%;
-					resize: none;
-					margin: 5px 0 5px 0;
-					font-family: "Arial", Arial, Helvetica;
-					background: #f8f7f2
-				}
+          #newmsg {
+            width: 98%;
+            resize: none;
+            margin: 5px 0 5px 0;
+            font-family: 'Arial', Arial, Helvetica;
+            background: #f8f7f2;
+          }
 
-				#name {
-					width: 98%;
-					resize: none;
-					margin: 5px 0 5px 0;
-					font-family: "Arial", Arial, Helvetica;
-					background: #f8f7f2;
-					border: 1px solid #a9a9a9
-				}
+          #name {
+            width: 98%;
+            resize: none;
+            margin: 5px 0 5px 0;
+            font-family: 'Arial', Arial, Helvetica;
+            background: #f8f7f2;
+            border: 1px solid #a9a9a9;
+          }
 
-				.yved {
-					position: fixed;
-					right: 20px;
-					top: 70px;
-					width: 300px;
-					vertical-align: middle;
-					height: 120px;
-					color: white;
-					padding: 15px;
-					font-size: 15px;
-					line-height: 90px;
-					border-radius: 10px;
-					display: none;
-					z-index: 9999
-				}
+          .yved {
+            position: fixed;
+            right: 20px;
+            top: 70px;
+            width: 300px;
+            vertical-align: middle;
+            height: 120px;
+            color: white;
+            padding: 15px;
+            font-size: 15px;
+            line-height: 90px;
+            border-radius: 10px;
+            display: none;
+            z-index: 9999;
+          }
 
-				.yvedi {
-					float: left;
-					width: 50px !important;
-					margin-right: 10px;
-					margin-top: 20px
-				}
+          .yvedi {
+            float: left;
+            width: 50px !important;
+            margin-right: 10px;
+            margin-top: 20px;
+          }
 
-				.yvedt {
-					width: 208px;
-					line-height: normal;
-					display: inline-block;
-					vertical-align: middle
-				}
+          .yvedt {
+            width: 208px;
+            line-height: normal;
+            display: inline-block;
+            vertical-align: middle;
+          }
 
-				.yvedf1 {
-					background-color: #363636
-				}
+          .yvedf1 {
+            background-color: #363636;
+          }
 
-				.yvedf2 {
-					background-color: #cd5555
-				}
+          .yvedf2 {
+            background-color: #cd5555;
+          }
 
-				.yvedvt {
-					float: left;
-					height: 90px;
-					line-height: 90px;
-					display: inline-block;
-					vertical-align: middle
-				}
-			</style>
-			<style>
-				/* body {
+          .yvedvt {
+            float: left;
+            height: 90px;
+            line-height: 90px;
+            display: inline-block;
+            vertical-align: middle;
+          }
+        </style>
+        <style>
+          /* body {
 			margin-top: 25px !important
 		} */
 
-				.insite {
-					position: fixed;
-					font-family: Geneva, Arial, Helvetica, sans-serif;
-					text-transform: uppercase;
-					width: 100%;
-					height: 25px;
-					font-size: 15px;
-					line-height: 25px;
-					font-stretch: ultra-condensed;
-					color: white;
-					background-color: #00000085;
-					z-index: 99999999;
-					top: 0;
-					left: 0;
-					text-align: center
-				}
+          .insite {
+            position: fixed;
+            font-family: Geneva, Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+            width: 100%;
+            height: 25px;
+            font-size: 15px;
+            line-height: 25px;
+            font-stretch: ultra-condensed;
+            color: white;
+            background-color: #00000085;
+            z-index: 99999999;
+            top: 0;
+            left: 0;
+            text-align: center;
+          }
 
-				.ins_red {
-					color: #7cfc00
-				}
+          .ins_red {
+            color: #7cfc00;
+          }
 
-				.ins_wite {
-					color: white
-				}
-			</style>
+          .ins_wite {
+            color: white;
+          }
+        </style>
 
-			<div class="insite hidden">Зараз на сайті: <span id="insite">1</span> | Покупок сьогодні: <span
-					id="pokup">2</span></div>
+        <div class="insite hidden">
+          Зараз на сайті: <span id="insite">1</span> | Покупок сьогодні:
+          <span id="pokup">2</span>
+        </div>
 
-			<script>
-				$(document).ready(function () {
-					$('.insite').removeClass("hidden")
-				}),
+        <script>
+          $(document).ready(function () {
+            $('.insite').removeClass('hidden');
+          }),
+            null == localStorage.pokup2 && (localStorage.pokup2 = '33'),
+            null == localStorage.pokup1 && (localStorage.pokup1 = '14'),
+            $('#pokup').fadeIn(200).text(localStorage.pokup2),
+            $('#insite').fadeIn(200).text(localStorage.pokup1);
 
-					null == localStorage.pokup2 && (localStorage.pokup2 = "33"),
-					null == localStorage.pokup1 && (localStorage.pokup1 = "14"),
-					$("#pokup").fadeIn(200).text(localStorage.pokup2),
-					$("#insite").fadeIn(200).text(localStorage.pokup1);
+          var timerId = setInterval(function () {
+            $('#pokup').fadeOut(200);
+            var e = $('#pokup').text(),
+              t = Number(e) + 1;
+            $('#pokup').fadeIn(200).text(t), (localStorage.pokup2 = t);
+          }, 23000);
 
-				var timerId = setInterval(function () {
-
-					$("#pokup").fadeOut(200);
-					var e = $("#pokup").text(),
-						t = Number(e) + 1;
-					$("#pokup").fadeIn(200).text(t), localStorage.pokup2 = t
-
-				}, 23000);
-
-
-				timerId = setInterval(function () {
-
-					$("#insite").fadeOut(200);
-					var e = $("#insite").text(),
-						t = Number(e) + 1;
-					$("#insite").fadeIn(200).text(t), localStorage.pokup1 = t
-				}, 15000);
-			</script>
-
-
-
-
-		</b></b>
-</body>
-
+          timerId = setInterval(function () {
+            $('#insite').fadeOut(200);
+            var e = $('#insite').text(),
+              t = Number(e) + 1;
+            $('#insite').fadeIn(200).text(t), (localStorage.pokup1 = t);
+          }, 15000);
+        </script>
+      </b></b
+    >
+  </body>
 </html>
