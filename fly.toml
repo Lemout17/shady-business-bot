@@ -1,6 +1,6 @@
-# fly.toml file generated for my-magic-cup on 2023-03-12T18:02:30+02:00
-
+# TODO: change app name
 app = "my-magic-cup"
+
 kill_signal = "SIGINT"
 kill_timeout = 5
 primary_region = "waw"
